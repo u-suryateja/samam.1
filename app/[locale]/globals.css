@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@plugin "daisyui" {
+  themes: dark --default, dark --prefersdark;
+}
+
+:root {
+  --font-family: 'Sree Krushnadevaraya', sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Sree Krushnadevaraya;
+}
+

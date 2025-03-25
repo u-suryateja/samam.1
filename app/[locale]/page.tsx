@@ -1,7 +1,8 @@
-// app/page.tsx
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
+import "./globals.css";
+import Homee from "./components/Home";
 
 export default async function Home({
   params,
@@ -13,16 +14,8 @@ export default async function Home({
   const { locale } = await params;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center p-8">
-      <header className="w-full flex justify-end p-4">
-        <a
-          href={`/${locale === "en" ? "te" : "en"}`}
-          className="px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-600 transition"
-        >
-          {locale === "en" ? "Switch to Telugu" : "Switch to English"}
-        </a>
-      </header>
-      <main className="flex flex-col items-center text-center gap-6">
+    <div className="min-h-screen flex flex-col justify-center items-center p-8">
+      <main className="flex flex-col items-center text-center gap-6 w-full">
         <Image
           src="/assets/samam-logo.png"
           alt={`${g("name")} Logo`}
@@ -30,13 +23,19 @@ export default async function Home({
           height={180}
           priority
         />
-        <h1 className="text-2xl  font-bold">{t("title")}</h1>
+        <h1 className="text-2xl font-bold">{t("title")}</h1>
         <p className="text-lg text-gray-700">{t("intro")}</p>
         <Link href={"/about"}>{t("intro")}</Link>
+
+        {/* Ensure Homee Component is Centered */}
+        <div className="w-full max-w-[1200px] border-t border-gray-300">
+
+        </div>
+        <div className="w-full flex justify-center ">
+  <Homee />
+</div>
+
       </main>
-      <footer className="mt-auto p-4 text-sm text-gray-500">
-        {t("footer")}
-      </footer>
     </div>
   );
 }
