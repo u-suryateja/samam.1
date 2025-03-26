@@ -23,8 +23,11 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <button className="btn btn-ghost" onClick={toggleTheme}>
-      {theme === "light" ? "🌙" : "☀️"}
-    </button>
+    <button
+  className="btn btn-ghost w-6 h-6  rounded-full flex items-center justify-center"
+  onClick={toggleTheme}
+>
+ <span className="mb-1"> {theme === "light" ? "🌙" : "☀️"}</span>
+</button>
   );
 }

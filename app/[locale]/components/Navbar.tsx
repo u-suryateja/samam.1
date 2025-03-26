@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import LanguageSwitcher from "@/app/[locale]/components/LanguageSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
@@ -49,7 +50,7 @@ export default function Navbar() {
       </div>
 
       {/* Drawer Sidebar */}
-      <div className="drawer-side">
+      <div className="drawer-side mt-16">
         {/* Overlay to close the drawer */}
         <label htmlFor="nav-drawer" className="drawer-overlay" onClick={() => setIsOpen(false)}></label>
 
